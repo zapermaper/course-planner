@@ -71,21 +71,22 @@ const CoursePlanner = () => {
           hsSubjects={hsSubjects}
         />
       ) : (
+        //bg-purple-600
         <div className="max-w-4xl mx-auto">
           <Card className="border-purple-200 shadow-lg">
-          <CardHeader className="bg-purple-600 text-white rounded-t-lg">
+            <CardHeader className="bg-[#56357c] text-white rounded-t-lg">
             <CardTitle className="text-2xl">Richardson High School Course Planner</CardTitle>
           </CardHeader>
           <CardContent className="p-6">
             <Tabs defaultValue="basic" className="space-y-6">
               <TabsList className="grid grid-cols-3 bg-purple-100">
-                <TabsTrigger value="basic" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
+                <TabsTrigger value="basic" className="data-[state=active]:bg-[#56357c] data-[state=active]:text-white">
                   Basic Info
                 </TabsTrigger>
-                <TabsTrigger value="hs-credits" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
+                <TabsTrigger value="hs-credits" className="data-[state=active]:bg-[#56357c] data-[state=active]:text-white">
                   High School Credits
                 </TabsTrigger>
-                <TabsTrigger value="college-credits" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
+                <TabsTrigger value="college-credits" className="data-[state=active]:bg-[#56357c] data-[state=active]:text-white">
                   College Credits
                 </TabsTrigger>
               </TabsList>
