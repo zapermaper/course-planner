@@ -5,7 +5,6 @@ import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
 
 const PlanResults = ({ formData, onBack }) => {
-  // Helper function to get college info - moved up before use
   const getCollegeInfo = () => {
     try {
       if (!formData.college || !formData.intendedMajor) return null;
@@ -31,7 +30,6 @@ const PlanResults = ({ formData, onBack }) => {
     }
   };
 
-  // State declarations
   const [aiPlan, setAiPlan] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -158,14 +156,12 @@ const PlanResults = ({ formData, onBack }) => {
     );
   };
 
-  // Helper function to format category name
   const formatCategoryName = (category) => {
     return category.split('_').map(word => 
       word.charAt(0).toUpperCase() + word.toLowerCase().slice(1)
     ).join(' ');
   };
 
-  // Function to categorize and display high school credits
   const renderHighSchoolCredits = () => {
     if (!formData.hsCredits || Object.entries(formData.hsCredits).filter(([_, taken]) => taken).length === 0) {
       return <p className="text-gray-500 italic">No high school credits selected</p>;
