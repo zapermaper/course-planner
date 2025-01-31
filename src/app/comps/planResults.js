@@ -1,9 +1,163 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
-import { hsSubjects } from './courseData';
+import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
+import schoolData from './schoolData';
 
 const PlanResults = ({ formData, onBack }) => {
+  // Helper function to get college info - moved up before use
+  const getCollegeInfo = () => {
+    try {
+      if (!formData.college || !formData.intendedMajor) return null;
+      
+      const college = schoolData[formData.college];
+      if (!college) return null;
+
+      const major = college.majors.find(m => m.id === formData.intendedMajor);
+      if (!major) return null;
+
+      return {
+        collegeName: college.name,
+        majorName: major.name,
+        links: {
+          apCredit: major.apCreditLink || null,
+          dualCredit: major.dualCreditLink || null,
+          requirements: major.requirementsLink || null
+        }
+      };
+    } catch (error) {
+      console.error('Error getting college info:', error);
+      return null;
+    }
+  };
+
+  // State declarations
+  const [aiPlan, setAiPlan] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const collegeInfo = getCollegeInfo();
+
+  useEffect(() => {
+    generatePlan();
+  }, []);
+
+  const generatePlan = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch('/api/generate-plan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          studentInfo: {
+            currentGrade: formData.grade,
+            targetCollege: formData.college,
+            intendedMajor: formData.intendedMajor,
+            preferences: {
+              collegePriority: formData.collegePriority,
+              allowSummerCourses: formData.allowSummerCourses,
+              difficultyLevel: formData.difficultyLevel
+            }
+          },
+          completedCourses: formData.hsCredits,
+          apScores: formData.apScores,
+          dualCredits: formData.dualCredits,
+          availableCourses: {
+            highSchool: hsSubjects,
+            ap: apCourses,
+            dualCredit: dualCreditCourses
+          },
+          collegeInfo: collegeInfo
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate plan');
+      }
+
+      const data = await response.json();
+      setAiPlan(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const renderAIPlan = () => {
+    if (loading) {
+      return (
+        <div className="text-center p-6">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-purple-600">Generating your personalized course plan...</p>
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <div className="bg-red-50 p-4 rounded-lg">
+          <p className="text-red-600">Error: {error}</p>
+          <button 
+            onClick={generatePlan}
+            className="mt-2 px-4 py-2 bg-red-100 text-red-600 rounded hover:bg-red-200"
+          >
+            Try Again
+          </button>
+        </div>
+      );
+    }
+
+    if (!aiPlan) return null;
+
+    return (
+      <div className="space-y-6">
+        {Object.entries(aiPlan.recommendations).map(([year, semesters]) => (
+          <div key={year} className="border border-purple-200 rounded-lg p-4">
+            <h4 className="font-medium text-purple-800 mb-3">{year}</h4>
+            
+            {Object.entries(semesters).map(([semester, courses]) => (
+              <div key={semester} className="mb-4">
+                <h5 className="text-sm font-medium text-purple-600 capitalize mb-2">{semester}</h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {courses.map((course, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`p-2 rounded text-sm ${
+                        course.type === 'AP' ? 'bg-blue-50' :
+                        course.type === 'Dual Credit' ? 'bg-green-50' :
+                        'bg-purple-50'
+                      }`}
+                    >
+                      <div className="font-medium">{course.course}</div>
+                      <div className="text-xs text-gray-600">
+                        {course.type} • {course.credits} credits
+                        {course.notes && <div className="mt-1 text-gray-500">{course.notes}</div>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+
+        <div className="bg-purple-50 p-4 rounded-lg">
+          <h4 className="font-medium text-purple-800 mb-2">Plan Summary</h4>
+          <div className="space-y-2 text-sm">
+            <p>📚 Total Potential Credits: {aiPlan.summary.totalCredits}</p>
+            <p>✅ Graduation Status: {aiPlan.summary.graduationStatus}</p>
+            <p>💡 Additional Recommendations: {aiPlan.summary.recommendedPrep}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   // Helper function to format category name
   const formatCategoryName = (category) => {
     return category.split('_').map(word => 
@@ -142,11 +296,11 @@ const PlanResults = ({ formData, onBack }) => {
               )}
             </div>
 
-            {/* AI Recommendation Section */}
+            {/* AI Course Recommendations */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-purple-900">AI Course Recommendations</h3>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-500 italic">AI recommendations will appear here...</p>
+                {renderAIPlan()}
               </div>
             </div>
           </CardContent>
