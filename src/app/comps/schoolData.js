@@ -1032,32 +1032,494 @@ const schoolData = {
         }
       ]
     },
-    utd: {
-      name: "University of Texas at Dallas",
-      majors: [
+    "utdallas": {
+      "name": "University of Texas at Dallas",
+      "majors": [
         {
-          id: "utd_cs",
-          name: "Computer Science",
-          apCreditLink: "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
-          dualCreditLink: "https://catalog.utdallas.edu/dual-credit/cs",
-          requirementsLink: "https://catalog.utdallas.edu/now/undergraduate/programs/ecs/computer-science"
+          "id": "utd_bachelor_of_arts_in_history",
+          "name": "Bachelor of Arts in History",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ah/historical-studies"
         },
         {
-          id: "utd_se",
-          name: "Software Engineering",
-          apCreditLink: "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
-          dualCreditLink: "https://catalog.utdallas.edu/dual-credit/se",
-          requirementsLink: "https://catalog.utdallas.edu/now/undergraduate/programs/ecs/software-engineering"
+          "id": "utd_bachelor_of_arts_in_latin_american_studies",
+          "name": "Bachelor of Arts in Latin American Studies",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ah/latin-american-studies"
         },
         {
-          id: "utd_bus",
-          name: "Business Administration",
-          apCreditLink: "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
-          dualCreditLink: "https://catalog.utdallas.edu/dual-credit/business",
-          requirementsLink: "https://catalog.utdallas.edu/now/undergraduate/programs/jsom/business-administration"
+          "id": "utd_bachelor_of_arts_in_literature",
+          "name": "Bachelor of Arts in Literature",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ah/literature"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_philosophy",
+          "name": "Bachelor of Arts in Philosophy",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ah/philosophy"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_visual_and_performing_arts",
+          "name": "Bachelor of Arts in Visual and Performing Arts",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ah/visual-and-performing-arts-interdisciplinary-arts"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_arts,_technology,_and_emerging_communication",
+          "name": "Bachelor of Arts in Arts, Technology, and Emerging Communication",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/atec/arts-and-technology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_child_learning_and_development",
+          "name": "Bachelor of Science in Child Learning and Development",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/bbs/child-learning-and-development"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_cognitive_science",
+          "name": "Bachelor of Science in Cognitive Science",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/bbs/cognitive-science"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_neuroscience",
+          "name": "Bachelor of Science in Neuroscience",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/bbs/neuroscience"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_psychology",
+          "name": "Bachelor of Science in Psychology",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/bbs/psychology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_speech,_language,_and_hearing_sciences",
+          "name": "Bachelor of Science in Speech, Language, and Hearing Sciences",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/bbs/speech-language-and-hearing-sciences"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_criminology",
+          "name": "Bachelor of Arts in Criminology",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/criminology"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_economics",
+          "name": "Bachelor of Arts in Economics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/economics"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_international_political_economy",
+          "name": "Bachelor of Arts in International Political Economy",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/international-political-economy"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_political_science",
+          "name": "Bachelor of Arts in Political Science",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/political-science"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_sociology",
+          "name": "Bachelor of Arts in Sociology",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/sociology"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_criminology_and_biology_double_major",
+          "name": "Bachelor of Arts in Criminology and Biology (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/criminology-biology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_economics",
+          "name": "Bachelor of Science in Economics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/economics"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_geospatial_information_sciences",
+          "name": "Bachelor of Science in Geospatial Information Sciences",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/geospatial-information-science"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_international_political_economy",
+          "name": "Bachelor of Science in International Political Economy",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/international-political-economy"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_public_affairs",
+          "name": "Bachelor of Science in Public Affairs",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/public-affairs"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_public_policy",
+          "name": "Bachelor of Science in Public Policy",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/public-policy"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_economics_and_finance_double_major",
+          "name": "Bachelor of Science in Economics and Finance (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/economics-finance"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_international_political_economy_and_global_business_double_major",
+          "name": "Bachelor of Science in International Political Economy and Global Business (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/epps/international-political-economy-global-business"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_biomedical_engineering",
+          "name": "Bachelor of Science in Biomedical Engineering",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/biomedical-engineering"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_computer_engineering",
+          "name": "Bachelor of Science in Computer Engineering",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/computer-engineering"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_computer_science",
+          "name": "Bachelor of Science in Computer Science",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/computer-science"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_data_science_Engineering_&_Computer Science",
+          "name": "Bachelor of Science in Data Science",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/data-science"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_electrical_engineering",
+          "name": "Bachelor of Science in Electrical Engineering",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/electrical-engineering"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_mechanical_engineering",
+          "name": "Bachelor of Science in Mechanical Engineering",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/mechanical-engineering"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_software_engineering",
+          "name": "Bachelor of Science in Software Engineering",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/ecs/software-engineering"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_american_studies",
+          "name": "Bachelor of Arts in American Studies",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/is/american-studies"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_education",
+          "name": "Bachelor of Arts in Education",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/is/education"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_interdisciplinary_studies",
+          "name": "Bachelor of Arts in Interdisciplinary Studies",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/is/interdisciplinary-studiesa"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_healthcare_studies",
+          "name": "Bachelor of Science in Healthcare Studies",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/is/healthcare"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_education",
+          "name": "Bachelor of Science in Education",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/is/education"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_interdisciplinary_studies",
+          "name": "Bachelor of Science in Interdisciplinary Studies",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/is/interdisciplinary-studies"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_accounting",
+          "name": "Bachelor of Science in Accounting",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/accounting"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_business_administration",
+          "name": "Bachelor of Science in Business Administration",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/business-administration"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_business_analytics",
+          "name": "Bachelor of Science in Business Analytics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/business-analytics"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_finance",
+          "name": "Bachelor of Science in Finance",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/finance"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_global_business",
+          "name": "Bachelor of Science in Global Business",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/global-business"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_healthcare_management",
+          "name": "Bachelor of Science in Healthcare Management",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/healthcare-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_human_resource_management",
+          "name": "Bachelor of Science in Human Resource Management",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022-undergraduate/programs/jsom/human-resource-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_information_technology_and_systems",
+          "name": "Bachelor of Science in Information Technology and Systems",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/information-technology-systems"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_marketing",
+          "name": "Bachelor of Science in Marketing",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/marketing"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_supply_chain_management",
+          "name": "Bachelor of Science in Supply Chain Management",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/supply-chain-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_finance_and_economics_double_major",
+          "name": "Bachelor of Science in Finance and Economics (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/finance-economics"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_global_business_and_human_resource_management_double_major",
+          "name": "Bachelor of Science in Global Business and Human Resource Management (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/global-business-human-resource-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_global_business_and_international_political_economy_double_major",
+          "name": "Bachelor of Science in Global Business and International Political Economy (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/global-business-international-political-economy"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_global_business_and_marketing_double_major",
+          "name": "Bachelor of Science in Global Business and Marketing (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/global-business-marketing"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_global_business_and_supply_chain_management_double_major",
+          "name": "Bachelor of Science in Global Business and Supply Chain Management (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/global-business-supply-chain-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_healthcare_management_and_biology_double_major",
+          "name": "Bachelor of Science in Healthcare Management and Biology (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/healthcare-management-biology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_healthcare_management_and_molecular_biology_double_major",
+          "name": "Bachelor of Science in Healthcare Management and Molecular Biology (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/jsom/healthcare-management-molecular-biology"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_biology",
+          "name": "Bachelor of Arts in Biology",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/biology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_biology",
+          "name": "Bachelor of Science in Biology",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/biology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_molecular_biology",
+          "name": "Bachelor of Science in Molecular Biology",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/molecular-biology"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_biology_and_healthcare_management_double_major",
+          "name": "Bachelor of Science in Biology and Healthcare Management (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/biology-healthcare-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_molecular_biology_and_healthcare_management_double_major",
+          "name": "Bachelor of Science in Molecular Biology and Healthcare Management (Double Major)",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/molecular-biology-healthcare-management"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_biochemistry",
+          "name": "Bachelor of Science in Biochemistry",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/biochemistry"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_chemistry",
+          "name": "Bachelor of Arts in Chemistry",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/chemistry"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_chemistry",
+          "name": "Bachelor of Science in Chemistry",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/chemistry"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_geosciences",
+          "name": "Bachelor of Science in Geosciences",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/geosciences"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_mathematics",
+          "name": "Bachelor of Arts in Mathematics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/mathematics"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_mathematics",
+          "name": "Bachelor of Science in Mathematics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/mathematics"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_actuarial_science",
+          "name": "Bachelor of Science in Actuarial Science",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/actuarial-science"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_data_science_Natural_Sciences&Mathematics",
+          "name": "Bachelor of Science in Data Science",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/data-science"
+        },
+        {
+          "id": "utd_bachelor_of_arts_in_physics",
+          "name": "Bachelor of Arts in Physics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/physics"
+        },
+        {
+          "id": "utd_bachelor_of_science_in_physics",
+          "name": "Bachelor of Science in Physics",
+          "apCreditLink": "https://transfercredit.utdallas.edu/search-by-test/ap-credit/",
+          "dualCreditLink": "https://docs.google.com/document/d/1a5WircFivehLSjDqbE38IPFeLU6UdeStrjlfN7tmXGs/edit?tab=t.0",
+          "requirementsLink": "https://catalog.utdallas.edu/2022/undergraduate/programs/nsm/physics"
         }
       ]
     }
-  };
+  }
   
   export default schoolData;
