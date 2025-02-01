@@ -1,6 +1,5 @@
 
-First, run the development server:
-
+Dedicated torwards jake and all his hammer monkeys
 ```bash
 #req
 npm install next    #local download
