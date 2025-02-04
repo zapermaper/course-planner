@@ -75,7 +75,7 @@ PREREQUISITES:
    - Calculus 3 requires Calculus BC completion
 2. Science:
    - Chemistry recommended before AP Biology
-   - Physics recommended before AP Physics
+   - Physics 1(ap/onramps) recommended before AP Physics
    - AP Computer Science A recommended after AP CS Principles
 
 GRADUATION RULES:
