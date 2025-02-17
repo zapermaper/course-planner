@@ -3,7 +3,9 @@ Dedicated torwards jake and all his hammer monkeys
 ```bash
 #req
 npm install next    #local download
+    or
 npm install next -g #global download
+
 npm install openai
 
 Make a .env.local file in the root folder and add your OpenAI API key to it.
