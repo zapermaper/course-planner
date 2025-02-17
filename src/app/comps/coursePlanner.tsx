@@ -8,7 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
-
+//front end, gotta ad the extra cred section and summary page so i can update course ratings at a specific school
 const CoursePlanner = () => {
   const [formData, setFormData] = useState({
     grade: '',
