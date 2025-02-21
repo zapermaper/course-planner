@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
 //adding extra cred part soon
-const PlanResults = ({ formData, onBack }) => {
+const PlanResult = ({ formData, onBack }) => {
   const getCollegeInfo = () => {
     try {
       if (!formData.college || !formData.intendedMajor) return null;
@@ -306,4 +306,4 @@ const PlanResults = ({ formData, onBack }) => {
   );
 };
 
-export default PlanResults;
+export default PlanResult;
