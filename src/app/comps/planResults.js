@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
 //adding extra cred part soon
-const planResults = ({ formData, onBack }) => {
+const PlanResults = ({ formData, onBack }) => {
   const getCollegeInfo = () => {
     try {
       if (!formData.college || !formData.intendedMajor) return null;
@@ -38,7 +38,7 @@ const planResults = ({ formData, onBack }) => {
 
   useEffect(() => {
     generatePlan();
-  }, []);
+  }, [generatePlan]); // Add generatePlan as a dependency
 
   const generatePlan = async () => {
     try {
@@ -163,12 +163,12 @@ const planResults = ({ formData, onBack }) => {
   };
 
   const renderHighSchoolCredits = () => {
-    if (!formData.hsCredits || Object.entries(formData.hsCredits).filter(([_, taken]) => taken).length === 0) {
+    if (!formData.hsCredits || Object.entries(formData.hsCredits).filter(([, taken]) => taken).length === 0) {
       return <p className="text-gray-500 italic">No high school credits selected</p>;
     }
 
     const categorizedCredits = Object.entries(formData.hsCredits)
-      .filter(([_, taken]) => taken)
+      .filter(([, taken]) => taken)
       .reduce((acc, [course]) => {
         // Find which category the course belongs to
         let foundCategory = 'Other';
@@ -306,4 +306,4 @@ const planResults = ({ formData, onBack }) => {
   );
 };
 
-export default planResults;
+export default PlanResults;
