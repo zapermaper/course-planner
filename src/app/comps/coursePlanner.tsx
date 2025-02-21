@@ -10,38 +10,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
 
-// Define interfaces for type safety
-interface User {
-  email: string;
-  // Add other user properties as needed
-}
-
-interface APScore {
-  course: string;
-  score: string;
-}
-
-interface DualCredit {
-  course: string;
-  grade: string;
-  semester: string;
-}
-
-interface FormData {
-  grade: string;
-  college: string;
-  intendedMajor: string;
-  collegePriority: boolean;
-  allowSummerCourses: boolean;
-  difficultyLevel: number;
-  hsCredits: Record<string, boolean>;
-  apScores: APScore[];
-  dualCredits: DualCredit[];
-}
-
-const CoursePlanner: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [formData, setFormData] = useState<FormData>({
+//front end, gotta ad the extra cred section and summary page so i can update course ratings at a specific school
+const CoursePlanner = () => {
+  const [user, setUser] = useState(null);
+  const [formData, setFormData] = useState({
     grade: '',
     college: '',
     intendedMajor: '',
@@ -57,10 +29,10 @@ const CoursePlanner: React.FC = () => {
   const [plan, setPlan] = useState(null);
 
   if (!user) {
-    return <LoginScreen onLogin={(newUser: User) => setUser(newUser)} />;
+    return <LoginScreen onLogin={setUser} />;
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
@@ -83,32 +55,31 @@ const CoursePlanner: React.FC = () => {
     }));
   };
 
-  const handleRemoveAPScore = (indexToRemove: number) => {
+  const handleRemoveAPScore = (indexToRemove) => {
     setFormData(prev => ({
       ...prev,
       apScores: prev.apScores.filter((_, index) => index !== indexToRemove)
     }));
   };
 
-  const handleRemoveDualCredit = (indexToRemove: number) => {
+  const handleRemoveDualCredit = (indexToRemove) => {
     setFormData(prev => ({
       ...prev,
       dualCredits: prev.dualCredits.filter((_, index) => index !== indexToRemove)
     }));
   };
 
-  const updateAPScore = (index: number, field: keyof APScore, value: string) => {
+  const updateAPScore = (index, field, value) => {
     const newScores = [...formData.apScores];
     newScores[index] = { ...newScores[index], [field]: value };
     setFormData(prev => ({ ...prev, apScores: newScores }));
   };
 
-  const updateDualCredit = (index: number, field: keyof DualCredit, value: string) => {
+  const updateDualCredit = (index, field, value) => {
     const newCredits = [...formData.dualCredits];
     newCredits[index] = { ...newCredits[index], [field]: value };
     setFormData(prev => ({ ...prev, dualCredits: newCredits }));
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-yellow-50 p-4">
       {showResults ? (
@@ -194,7 +165,7 @@ const CoursePlanner: React.FC = () => {
                       <h3 className="text-lg font-medium text-purple-900">Credit Transfer Information</h3>
                       <div className="space-y-2">
                         {schoolData[formData.college].majors.find(m => m.id === formData.intendedMajor) && (
-                          <>  
+                          <>
                             <div className="flex space-x-4">
                               <a 
                                 href={schoolData[formData.college].majors.find(m => m.id === formData.intendedMajor).apCreditLink}

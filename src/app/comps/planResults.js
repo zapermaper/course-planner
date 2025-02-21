@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
@@ -36,7 +36,11 @@ const PlanResults = ({ formData, onBack }) => {
 
   const collegeInfo = getCollegeInfo();
 
-  const generatePlan = useCallback(async () => {
+  useEffect(() => {
+    generatePlan();
+  }, []);
+
+  const generatePlan = async () => {
     try {
       setLoading(true);
       setError(null);
@@ -80,11 +84,7 @@ const PlanResults = ({ formData, onBack }) => {
     } finally {
       setLoading(false);
     }
-  }, [collegeInfo, formData]);  
-
-  useEffect(() => {
-    generatePlan();
-  }, [generatePlan]); 
+  };
 
   const renderAIPlan = () => {
     if (loading) {
@@ -163,13 +163,14 @@ const PlanResults = ({ formData, onBack }) => {
   };
 
   const renderHighSchoolCredits = () => {
-    if (!formData.hsCredits || Object.entries(formData.hsCredits).filter(([, taken]) => taken).length === 0) {
+    if (!formData.hsCredits || Object.entries(formData.hsCredits).filter(([_, taken]) => taken).length === 0) {
       return <p className="text-gray-500 italic">No high school credits selected</p>;
     }
 
     const categorizedCredits = Object.entries(formData.hsCredits)
-      .filter(([, taken]) => taken)
+      .filter(([_, taken]) => taken)
       .reduce((acc, [course]) => {
+        // Find which category the course belongs to
         let foundCategory = 'Other';
         for (const [category, courses] of Object.entries(hsSubjects)) {
           if (courses.includes(course)) {
