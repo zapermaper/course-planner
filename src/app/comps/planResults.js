@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
@@ -36,10 +36,7 @@ const PlanResults = ({ formData, onBack }) => {
 
   const collegeInfo = getCollegeInfo();
 
-  useEffect(() => {
-    generatePlan();
-  }, [generatePlan]);// dependency
-  const generatePlan = async () => {
+  const generatePlan = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -83,7 +80,11 @@ const PlanResults = ({ formData, onBack }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [collegeInfo, formData]);  
+
+  useEffect(() => {
+    generatePlan();
+  }, [generatePlan]); 
 
   const renderAIPlan = () => {
     if (loading) {
@@ -169,7 +170,6 @@ const PlanResults = ({ formData, onBack }) => {
     const categorizedCredits = Object.entries(formData.hsCredits)
       .filter(([, taken]) => taken)
       .reduce((acc, [course]) => {
-        // Find which category the course belongs to
         let foundCategory = 'Other';
         for (const [category, courses] of Object.entries(hsSubjects)) {
           if (courses.includes(course)) {

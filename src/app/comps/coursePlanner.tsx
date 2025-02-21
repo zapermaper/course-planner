@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import planResults from './planResults';
+import PlanResults from './planResults';
 import { hsSubjects, apCourses, dualCreditCourses } from "./courseData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
