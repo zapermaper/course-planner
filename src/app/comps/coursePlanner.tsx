@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
 
+//front end, gotta ad the extra cred section and summary page so i can update course ratings at a specific school
 const CoursePlanner = () => {
   const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({

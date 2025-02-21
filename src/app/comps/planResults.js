@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
-
+//adding extra cred part soon
 const PlanResults = ({ formData, onBack }) => {
   const getCollegeInfo = () => {
     try {

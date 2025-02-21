@@ -1,6 +1,7 @@
 // School-specific majors and credit transfer information
 //pretty repetative, but it's just a bunch of data
 //scraping through pyhon and html data actually kinda works, no idea what im saying but trust...
+//gotta add baylor, a&m, Rice, and any other tx schools possible 
 const schoolData = {
     general: {
       name: "General College Path",
