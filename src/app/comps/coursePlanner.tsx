@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import PlanResult from 'src\app\comps\planResults.js';
+import PlanResult from './src/app/comps/planResults.js';
 import { hsSubjects, apCourses, dualCreditCourses } from "./courseData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
 
 //front end, gotta ad the extra cred section and summary page so i can update course ratings at a specific school
-const CoursePlanner = () => {
+const CoursePlanner = ( ) => {
   const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({
     grade: '',
