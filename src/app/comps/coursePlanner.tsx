@@ -10,8 +10,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
 
+// Define interfaces for type safety
 interface User {
   email: string;
+  // Add other user properties as needed
 }
 
 interface APScore {
@@ -106,10 +108,11 @@ const CoursePlanner: React.FC = () => {
     newCredits[index] = { ...newCredits[index], [field]: value };
     setFormData(prev => ({ ...prev, dualCredits: newCredits }));
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-yellow-50 p-4">
       {showResults ? (
-        <planResults 
+        <PlanResults 
           formData={formData}
           onBack={() => setShowResults(false)}
           hsSubjects={hsSubjects}
