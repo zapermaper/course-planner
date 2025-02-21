@@ -38,8 +38,7 @@ const PlanResults = ({ formData, onBack }) => {
 
   useEffect(() => {
     generatePlan();
-  }, [generatePlan]); // Add generatePlan as a dependency
-
+  }, [generatePlan]);// dependency
   const generatePlan = async () => {
     try {
       setLoading(true);
