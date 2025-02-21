@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import planResult from './planResults';
+import planResults from './planResults';
 import { hsSubjects, apCourses, dualCreditCourses } from "./courseData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -83,7 +83,7 @@ const CoursePlanner = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-yellow-50 p-4">
       {showResults ? (
-        <PlanResult 
+        <planResults 
           formData={formData}
           onBack={() => setShowResults(false)}
           hsSubjects={hsSubjects}
