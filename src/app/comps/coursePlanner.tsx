@@ -8,8 +8,10 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
+import LoginScreen from "@/app/comps/LoginScreen";
 
 const CoursePlanner = () => {
+  const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({
     grade: '',
     college: '',
@@ -24,6 +26,10 @@ const CoursePlanner = () => {
   const [showResults, setShowResults] = useState(false);
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState(null);
+
+  if (!user) {
+    return <LoginScreen onLogin={setUser} />;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,7 +79,6 @@ const CoursePlanner = () => {
     newCredits[index] = { ...newCredits[index], [field]: value };
     setFormData(prev => ({ ...prev, dualCredits: newCredits }));
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-yellow-50 p-4">
       {showResults ? (
