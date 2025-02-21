@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
 //adding extra cred part soon
-const PlanResult = ({ formData, onBack }) => {
+const planResults = ({ formData, onBack }) => {
   const getCollegeInfo = () => {
     try {
       if (!formData.college || !formData.intendedMajor) return null;
