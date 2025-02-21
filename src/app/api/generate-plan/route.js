@@ -1,4 +1,4 @@
-import OpenAI from 'openai';
+import OpenAI from './node_modules/openai/index.mjs'
 import { NextResponse } from 'next/server';
 
 const openai = new OpenAI({

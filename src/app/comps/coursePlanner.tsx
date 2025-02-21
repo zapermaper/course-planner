@@ -165,7 +165,7 @@ const CoursePlanner = () => {
                       <h3 className="text-lg font-medium text-purple-900">Credit Transfer Information</h3>
                       <div className="space-y-2">
                         {schoolData[formData.college].majors.find(m => m.id === formData.intendedMajor) && (
-                          <>
+                          <>  
                             <div className="flex space-x-4">
                               <a 
                                 href={schoolData[formData.college].majors.find(m => m.id === formData.intendedMajor).apCreditLink}
