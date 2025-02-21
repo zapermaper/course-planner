@@ -306,4 +306,4 @@ const PlanResult = ({ formData, onBack }) => {
   );
 };
 
-export default PlanResult;
+export default planResults;
