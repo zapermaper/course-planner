@@ -26,7 +26,7 @@ const CoursePlanner = () => {
   });
   const [showResults, setShowResults] = useState(false);
   const [loading, setLoading] = useState(false);
- // const [plan, setPlan] = useState(null);
+  const [plan, setPlan] = useState(null);
 
   if (!user) {
     return <LoginScreen onLogin={setUser} />;
