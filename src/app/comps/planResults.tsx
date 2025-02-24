@@ -3,30 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
-interface PlanResultsProps {
-  formData: {
-    grade: string;
-    college: string;
-    intendedMajor: string;
-    collegePriority: boolean;
-    allowSummerCourses: boolean;
-    difficultyLevel: number;
-    hsCredits: Record<string, boolean>;
-    apScores: Array<{
-      course: string;
-      score: string;
-    }>;
-    dualCredits: Array<{
-      course: string;
-      grade: string;
-      semester: string;
-    }>;
-  };
-  onBack: () => void;
-  hsSubjects: typeof hsSubjects;
-}
-
-const PlanResults: React.FC<PlanResultsProps> = ({ formData, onBack, hsSubjects }) => {
+//adding extra cred part soon
+const PlanResults = ({ formData, onBack }) => {
   const getCollegeInfo = () => {
     try {
       if (!formData.college || !formData.intendedMajor) return null;
@@ -54,7 +32,7 @@ const PlanResults: React.FC<PlanResultsProps> = ({ formData, onBack, hsSubjects 
 
   const [aiPlan, setAiPlan] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
 
   const collegeInfo = getCollegeInfo();
 
@@ -102,13 +80,8 @@ const PlanResults: React.FC<PlanResultsProps> = ({ formData, onBack, hsSubjects 
       const data = await response.json();
       setAiPlan(data);
     } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("An unknown error occurred");
-      }
-    }
-     finally {
+      setError(err.message);
+    } finally {
       setLoading(false);
     }
   };
