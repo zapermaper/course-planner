@@ -10,10 +10,32 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
 
-//front end, gotta ad the extra cred section and summary page so i can update course ratings at a specific school
+interface User {
+  email: string;
+}
+
+interface FormData {
+  grade: string;
+  college: string;
+  intendedMajor: string;
+  collegePriority: boolean;
+  allowSummerCourses: boolean;
+  difficultyLevel: number;
+  hsCredits: Record<string, boolean>;
+  apScores: Array<{
+    course: string;
+    score: string;
+  }>;
+  dualCredits: Array<{
+    course: string;
+    grade: string;
+    semester: string;
+  }>;
+}
+
 const CoursePlanner = () => {
-  const [user, setUser] = useState(null);
-  const [formData, setFormData] = useState({
+  const [user, setUser] = useState<User | null>(null);
+  const [formData, setFormData] = useState<FormData>({
     grade: '',
     college: '',
     intendedMajor: '',
@@ -28,11 +50,15 @@ const CoursePlanner = () => {
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState(null);
 
+  const handleLogin = (loggedInUser: User) => {
+    setUser(loggedInUser);
+  };
+
   if (!user) {
-    return <LoginScreen onLogin={setUser} />;
+    return <LoginScreen onLogin={handleLogin} />;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
@@ -55,31 +81,32 @@ const CoursePlanner = () => {
     }));
   };
 
-  const handleRemoveAPScore = (indexToRemove) => {
+  const handleRemoveAPScore = (indexToRemove: number) => {
     setFormData(prev => ({
       ...prev,
       apScores: prev.apScores.filter((_, index) => index !== indexToRemove)
     }));
   };
 
-  const handleRemoveDualCredit = (indexToRemove) => {
+  const handleRemoveDualCredit = (indexToRemove: number) => {
     setFormData(prev => ({
       ...prev,
       dualCredits: prev.dualCredits.filter((_, index) => index !== indexToRemove)
     }));
   };
 
-  const updateAPScore = (index, field, value) => {
+  const updateAPScore = (index: number, field: string, value: string) => {
     const newScores = [...formData.apScores];
     newScores[index] = { ...newScores[index], [field]: value };
     setFormData(prev => ({ ...prev, apScores: newScores }));
   };
 
-  const updateDualCredit = (index, field, value) => {
+  const updateDualCredit = (index: number, field: string, value: string) => {
     const newCredits = [...formData.dualCredits];
     newCredits[index] = { ...newCredits[index], [field]: value };
     setFormData(prev => ({ ...prev, dualCredits: newCredits }));
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-yellow-50 p-4">
       {showResults ? (
