@@ -29,7 +29,7 @@ export async function POST(request) {
           <h2 style="color: #56357c;">Richardson High School Course Planner</h2>
           <p>Your verification code is:</p>
           <h1 style="color: #56357c; font-size: 32px;">${verificationCode}</h1>
-          <p>This code will expire in 15 minutes.</p>
+          <p>This code will expire in 5 minutes.</p>
           <p>If you didn't request this code, please ignore this email.</p>
         </div>
       `
