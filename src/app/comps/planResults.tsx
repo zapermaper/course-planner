@@ -54,7 +54,7 @@ const PlanResults: React.FC<PlanResultsProps> = ({ formData, onBack, hsSubjects 
 
   const [aiPlan, setAiPlan] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   const collegeInfo = getCollegeInfo();
 
@@ -102,8 +102,13 @@ const PlanResults: React.FC<PlanResultsProps> = ({ formData, onBack, hsSubjects 
       const data = await response.json();
       setAiPlan(data);
     } catch (err) {
-      setError(err.message);
-    } finally {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
+    }
+     finally {
       setLoading(false);
     }
   };
