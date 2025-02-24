@@ -5,14 +5,6 @@ export default function Home() {
   return (
     <main>
       <CoursePlanner />
-      <Image
-        src="/course-planner/vercel.svg"
-        alt="Vercel Logo"
-        width={100}
-        height={24}
-        priority
-      />
-
     </main>
   );
 }
