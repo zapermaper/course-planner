@@ -31,7 +31,7 @@ export async function POST(request) {
 
     const user = {
       email,
-      verified: true,
+      verified: true, 
     };
 
     return NextResponse.json({ 

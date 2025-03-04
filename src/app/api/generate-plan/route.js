@@ -97,7 +97,8 @@ Format the response as a JSON object with the following structure:
   "summary": {
     "totalCredits": "X",
     "graduationStatus": "On track/Warning message",
-    "recommendedPrep": "Additional recommendations"
+    "recommendedPrep": "Additional recommendations",
+    "recommended extracurriculars": "List of recommended activities that can help with major/career goals"
   }
 }`;
 
