@@ -150,6 +150,7 @@ const PlanResults = ({ formData, onBack }) => {
             <p>📚 Total Potential Credits: {aiPlan.summary.totalCredits}</p>
             <p>✅ Graduation Status: {aiPlan.summary.graduationStatus}</p>
             <p>💡 Additional Recommendations: {aiPlan.summary.recommendedPrep}</p>
+            <p>🪄Recommended Extracurricularss: {aiPlan.summary.recommendedExtracurriculars}</p>
           </div>
         </div>
       </div>
