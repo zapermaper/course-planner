@@ -31,7 +31,7 @@ const CoursePlanner = () => {
   if (!user) {
     return <LoginScreen onLogin={setUser} />;
   }
-
+// i was here
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
