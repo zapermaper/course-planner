@@ -259,13 +259,13 @@ const PlanResults = ({ formData, onBack }) => {
                 {/* Major image */}
                 <div className="w-full md:w-1/2 flex items-center justify-center rounded-lg overflow-hidden bg-white p-2">
                   <img 
-                    src={`img\\${formData.intendedMajor}.jpg`}
+                    src={`/img/${formData.intendedMajor}.jpg`} 
                     alt={`${formData.intendedMajor} major`}
                     className="max-w-full max-h-64 object-contain rounded"
-                    /*onError={(e) => {
+                    onError={(e) => {
                       e.target.onError = null;
                       e.target.src = "/img/default-major.jpg";
-                    }}*/
+                    }}
                   />
                 </div>
               </div>
