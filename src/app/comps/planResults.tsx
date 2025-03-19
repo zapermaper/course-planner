@@ -218,41 +218,62 @@ const PlanResults = ({ formData, onBack }) => {
             <CardTitle className="text-2xl">Your Course Plan Results</CardTitle>
           </CardHeader>
           <CardContent className="p-6 space-y-8">
-            {/* Basic Information Section */}
+            {/* Basic Information Section with Image */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-purple-900">Basic Information</h3>
-              <div className="grid grid-cols-2 gap-4 bg-purple-50 p-4 rounded-lg">
-                <div>
-                  <p className="text-sm text-purple-600">Current Grade</p>
-                  <p className="font-medium">{formData.grade}</p>
+              <div className="flex flex-wrap md:flex-nowrap gap-4">
+                {/* Left side - Basic info */}
+                <div className="w-full md:w-1/2 bg-purple-50 p-4 rounded-lg">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div>
+                      <p className="text-sm text-purple-600">Current Grade</p>
+                      <p className="font-medium">{formData.grade}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-purple-600">Target College</p>
+                      <p className="font-medium">{formData.college}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-purple-600">Intended Major</p>
+                      <p className="font-medium">{formData.intendedMajor}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-purple-600">Course Load Preference</p>
+                      <p className="font-medium">{formData.difficultyLevel}/10</p>
+                    </div>
+                    <div className="flex space-x-6">
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-4 h-4 rounded ${formData.collegePriority ? 'bg-green-500' : 'bg-red-500'}`} />
+                        <span className="text-sm">Prioritize College Credits</span>
+                      </div>
+                    </div>
+                    <div className="flex space-x-6">
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-4 h-4 rounded ${formData.allowSummerCourses ? 'bg-green-500' : 'bg-red-500'}`} />
+                        <span className="text-sm">Allow Summer Courses</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-purple-600">Target College</p>
-                  <p className="font-medium">{formData.college}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-purple-600">Intended Major</p>
-                  <p className="font-medium">{formData.intendedMajor}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-purple-600">Course Load Preference</p>
-                  <p className="font-medium">{formData.difficultyLevel}/10</p>
+                
+                {/* Major image */}
+                <div className="w-full md:w-1/2 flex items-center justify-center rounded-lg overflow-hidden bg-white p-2">
+                  <img 
+                    src={`/img/${formData.intendedMajor}.jpg`} 
+                    alt={`${formData.intendedMajor} major`}
+                    className="max-w-full max-h-64 object-contain rounded"
+                    onError={(e) => {
+                      e.target.onError = null;
+                      e.target.src = "/img/default-major.jpg";
+                    }}
+                  />
                 </div>
               </div>
+              
               <div>
-              <p className="text-xl font-semibold text-purple-900">Extra Information</p>
-              <div className=" bg-purple-50 p-4 rounded-lg">
+                <p className="text-xl font-semibold text-purple-900">Extra Information</p>
+                <div className="bg-purple-50 p-4 rounded-lg">
                   <p className="font-medium">{formData.extraInfo}</p>
-                </div>
-                </div>
-              <div className="flex space-x-6">
-                <div className="flex items-center space-x-2">
-                  <div className={`w-4 h-4 rounded ${formData.collegePriority ? 'bg-green-500' : 'bg-red-500'}`} />
-                  <span>Prioritize College Credits</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className={`w-4 h-4 rounded ${formData.allowSummerCourses ? 'bg-green-500' : 'bg-red-500'}`} />
-                  <span>Allow Summer Courses</span>
                 </div>
               </div>
             </div>
