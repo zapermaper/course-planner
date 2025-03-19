@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
-import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
@@ -17,8 +16,8 @@ const CoursePlanner = () => {
   const [formData, setFormData] = useState({
     grade: '',
     college: '',
-    extra:'',
     intendedMajor: '',
+    extraInfo: '',
     collegePriority: false,
     allowSummerCourses: false,
     difficultyLevel: 5,
@@ -161,16 +160,7 @@ const CoursePlanner = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="space-y-4">
-              <div>
-                <label className="text-sm font-medium text-purple-900">Extra information to give gpt</label>
-                <Input
-                  type="extra"
-                  placeholder="Extra information to give gpt<"
-                  value={formData.extra}
-                  onChange={(e) => setFormData({...formData, extra: e.target.value})}
-                />
-              </div>
+
                   {formData.college && formData.intendedMajor && (
                     <div className="bg-purple-50 p-4 rounded-lg space-y-4">
                       <h3 className="text-lg font-medium text-purple-900">Credit Transfer Information</h3>
@@ -210,7 +200,15 @@ const CoursePlanner = () => {
                       </div>
                     </div>
                   )}
-
+<div className="space-y-2">
+  <label className="text-sm font-medium text-purple-900">Additional Information</label>
+  <textarea
+    className="w-full p-2 border border-purple-300 rounded min-h-[100px]"
+    placeholder="Please share any additional information that might help with your course planning (e.g., career goals, special interests, schedule constraints)"
+    value={formData.extraInfo}
+    onChange={(e) => setFormData({...formData, extraInfo: e.target.value})}
+  />
+</div>
                   <div className="bg-purple-50 p-4 rounded-lg space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
