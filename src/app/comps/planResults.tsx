@@ -239,8 +239,8 @@ const PlanResults = ({ formData, onBack }) => {
                   <p className="font-medium">{formData.difficultyLevel}/10</p>
                 </div>
               </div>
-              <div>
-                  <p className="text-sm text-purple-600">Extra Information</p>
+              <div className=" bg-purple-50 p-4 rounded-lg">
+                  <p className="text-xl font-semibold text-purple-900">Extra Information</p>
                   <p className="font-medium">{formData.extraInfo}</p>
                 </div>
               <div className="flex space-x-6">
