@@ -239,6 +239,10 @@ const PlanResults = ({ formData, onBack }) => {
                   <p className="font-medium">{formData.difficultyLevel}/10</p>
                 </div>
               </div>
+              <div>
+                  <p className="text-sm text-purple-600">Extra Information</p>
+                  <p className="font-medium">{formData.extraInfo}</p>
+                </div>
               <div className="flex space-x-6">
                 <div className="flex items-center space-x-2">
                   <div className={`w-4 h-4 rounded ${formData.collegePriority ? 'bg-green-500' : 'bg-red-500'}`} />
