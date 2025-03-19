@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import schoolData from './schoolData';
 import LoginScreen from "@/app/comps/LoginScreen";
@@ -16,6 +17,7 @@ const CoursePlanner = () => {
   const [formData, setFormData] = useState({
     grade: '',
     college: '',
+    extra:'',
     intendedMajor: '',
     collegePriority: false,
     allowSummerCourses: false,
@@ -159,7 +161,16 @@ const CoursePlanner = () => {
                       ))}
                     </select>
                   </div>
-
+                  <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-purple-900">Extra information to give gpt</label>
+                <Input
+                  type="extra"
+                  placeholder="Extra information to give gpt<"
+                  value={formData.extra}
+                  onChange={(e) => setFormData({...formData, extra: e.target.value})}
+                />
+              </div>
                   {formData.college && formData.intendedMajor && (
                     <div className="bg-purple-50 p-4 rounded-lg space-y-4">
                       <h3 className="text-lg font-medium text-purple-900">Credit Transfer Information</h3>
