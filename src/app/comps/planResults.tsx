@@ -241,11 +241,10 @@ const PlanResults = ({ formData, onBack }) => {
               </div>
               <div>
               <p className="text-xl font-semibold text-purple-900">Extra Information</p>
-
               <div className=" bg-purple-50 p-4 rounded-lg">
                   <p className="font-medium">{formData.extraInfo}</p>
                 </div>
-                <div/>
+                </div>
               <div className="flex space-x-6">
                 <div className="flex items-center space-x-2">
                   <div className={`w-4 h-4 rounded ${formData.collegePriority ? 'bg-green-500' : 'bg-red-500'}`} />
