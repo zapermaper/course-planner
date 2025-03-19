@@ -204,7 +204,7 @@ const CoursePlanner = () => {
   <label className="text-sm font-medium text-purple-900">Additional Information</label>
   <textarea
     className="w-full p-2 border border-purple-300 rounded min-h-[100px]"
-    placeholder="Please share any additional information that might help with your course planning (e.g., career goals, special interests, schedule constraints)"
+    placeholder="Please share any additional information that might help (ex: career goals, special interests, schedule constraints)"
     value={formData.extraInfo}
     onChange={(e) => setFormData({...formData, extraInfo: e.target.value})}
   />

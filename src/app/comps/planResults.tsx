@@ -62,6 +62,7 @@ const PlanResults = ({ formData, onBack }) => {
             }
           },
           completedCourses: formData.hsCredits,
+          extra:formData.extraInfo,
           apScores: formData.apScores,
           dualCredits: formData.dualCredits,
           availableCourses: {

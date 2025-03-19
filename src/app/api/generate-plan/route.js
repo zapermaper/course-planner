@@ -27,7 +27,8 @@ ${JSON.stringify(body.apScores, null, 2)}
 
 Dual Credits:
 ${JSON.stringify(body.dualCredits, null, 2)}
-
+extra comments by student for you to consider and apply:
+${JSON.stringify(body.extra, null, 2)}
 Please create a detailed semester-by-semester high school course plan following these STRICT requirements:
 
 CORE PRINCIPLES:
