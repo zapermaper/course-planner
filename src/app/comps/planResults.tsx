@@ -222,8 +222,6 @@ const PlanResults = ({ formData, onBack }) => {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-purple-900">Basic Information</h3>
               <div className="flex flex-wrap md:flex-nowrap gap-4">
-                {/* Left side - Basic info */}
-                {/* Left side - Basic info with the new layout */}
 <div className="w-full md:w-1/2 bg-purple-50 p-4 rounded-lg">
   <div className="grid grid-cols-1 gap-4">
     <div className="grid grid-cols-2 gap-4">
@@ -237,15 +235,14 @@ const PlanResults = ({ formData, onBack }) => {
       </div>
     </div>
     
-    <div className="grid grid-cols-2 gap-4">
-      <div>
-        <p className="text-sm text-purple-600">Target College</p>
-        <p className="font-medium">{formData.college}</p>
-      </div>
-      <div>
-        <p className="text-sm text-purple-600">Intended Major</p>
-        <p className="font-medium">{formData.intendedMajor}</p>
-      </div>
+    <div>
+      <p className="text-sm text-purple-600">Target College</p>
+      <p className="font-medium">{formData.college}</p>
+    </div>
+    
+    <div>
+      <p className="text-sm text-purple-600">Intended Major</p>
+      <p className="font-medium">{formData.intendedMajor}</p>
     </div>
     
     <div className="grid grid-cols-2 gap-4">
