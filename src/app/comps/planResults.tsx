@@ -87,9 +87,45 @@ const PlanResults = ({ formData, onBack }) => {
       setLoading(false);
     }
   };
-const rePrompt = () =>{
+  const rePrompt = async () => {
+    try {
+      setLoading(true);
+      setError(null);
   
-}
+      const response = await fetch('/api/reprompt-plan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          initialPlan: aiPlan, 
+          repromptInfo: formData.RepromptInfo, 
+          studentInfo: {
+            currentGrade: formData.grade,
+            targetCollege: formData.college,
+            intendedMajor: formData.intendedMajor,
+            preferences: {
+              collegePriority: formData.collegePriority,
+              allowSummerCourses: formData.allowSummerCourses,
+              difficultyLevel: formData.difficultyLevel
+            }
+          },
+          collegeInfo: collegeInfo
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to update plan');
+      }
+  
+      const data = await response.json();
+      setAiPlan(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   const renderAIPlan = () => {
     if (loading) {
       return (
@@ -327,23 +363,29 @@ const rePrompt = () =>{
             </div>
 
             {/* AI Course Recommendations */}
-            <div className="space-y-4">
+            {/* AI Course Recommendations */}
+  <div className="space-y-4">
               <h3 className="text-xl font-semibold text-purple-900">AI Course Recommendations</h3>
               <div className="bg-gray-50 p-4 rounded-lg">
                 {renderAIPlan()}
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-purple-900">Reprompt</label>
-                    <textarea
-                      className="w-full p-2 border border-purple-300 rounded min-h-[100px]"
-                      placeholder="Enter any Courses you want to change, or any other information you want to add"
-                      value={formData.RepromptInfo}
-                      onChange={(e) => formData.setFormData({...formData, RepromptInfo: e.target.value})}/>
-                    <Button 
-              onClick={(e) => generatePlan()}
-              className="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-purple-900 font-semibold h-12 text-lg"
-            ></Button>   
-              </div>
+              {!loading && (
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-purple-900">Reprompt</label>
+                  <textarea
+                    className="w-full p-2 border border-purple-300 rounded min-h-[100px]"
+                    placeholder="Enter any Courses you want to change, or any other information you want to add"
+                    value={formData.RepromptInfo}
+                    onChange={(e) => formData.setFormData({...formData, RepromptInfo: e.target.value})}
+                  />
+                  <Button 
+                    onClick={(e) => rePrompt()}
+                    className="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-purple-900 font-semibold h-12 text-lg"
+                  >
+                    Re-Generate
+                  </Button>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
