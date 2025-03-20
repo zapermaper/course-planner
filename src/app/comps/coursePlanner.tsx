@@ -88,6 +88,7 @@ const CoursePlanner = () => {
         <PlanResults 
           formData={formData}
           onBack={() => setShowResults(false)}
+          setFormData={setFormData}
           hsSubjects={hsSubjects}
         />
       ) : (

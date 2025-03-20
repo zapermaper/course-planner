@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
 import schoolData from './schoolData';
 //adding extra cred part soon
-const PlanResults = ({ formData, onBack }) => {
+const PlanResults = ({ formData, onBack,setFormData }) => {
   const getCollegeInfo = () => {
     try {
       if (!formData.college || !formData.intendedMajor) return null;
@@ -376,7 +376,7 @@ const PlanResults = ({ formData, onBack }) => {
                     className="w-full p-2 border border-purple-300 rounded min-h-[100px]"
                     placeholder="Enter any Courses you want to change, or any other information you want to add"
                     value={formData.RepromptInfo}
-                    onChange={(e) => formData.setFormData({...formData, RepromptInfo: e.target.value})}
+                    onChange={(e) => setFormData({...formData, RepromptInfo: e.target.value})}
                   />
                   <Button 
                     onClick={(e) => rePrompt()}
