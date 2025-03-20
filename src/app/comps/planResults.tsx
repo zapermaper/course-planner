@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { hsSubjects, apCourses, dualCreditCourses } from './courseData';
@@ -86,7 +87,9 @@ const PlanResults = ({ formData, onBack }) => {
       setLoading(false);
     }
   };
-
+const rePrompt = () =>{
+  
+}
   const renderAIPlan = () => {
     if (loading) {
       return (
@@ -328,6 +331,18 @@ const PlanResults = ({ formData, onBack }) => {
               <h3 className="text-xl font-semibold text-purple-900">AI Course Recommendations</h3>
               <div className="bg-gray-50 p-4 rounded-lg">
                 {renderAIPlan()}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-purple-900">Reprompt</label>
+                    <textarea
+                      className="w-full p-2 border border-purple-300 rounded min-h-[100px]"
+                      placeholder="Enter any Courses you want to change, or any other information you want to add"
+                      value={formData.RepromptInfo}
+                      onChange={(e) => formData.setFormData({...formData, RepromptInfo: e.target.value})}/>
+                    <Button 
+              onClick={(e) => generatePlan()}
+              className="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-purple-900 font-semibold h-12 text-lg"
+            ></Button>   
               </div>
             </div>
           </CardContent>

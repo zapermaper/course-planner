@@ -17,6 +17,7 @@ const CoursePlanner = () => {
     grade: '',
     college: '',
     intendedMajor: '',
+    RepromptInfo: '',
     extraInfo: '',
     collegePriority: false,
     allowSummerCourses: false,
