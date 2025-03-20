@@ -60,9 +60,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
       const data = await response.json();
       
       if (!response.ok) {
-        if(verificationCode!="shrek"){
           throw new Error(data.error || 'Invalid verification code');
-        }
       }
 
       onLogin(data.user);
