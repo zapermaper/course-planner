@@ -20,7 +20,7 @@ export async function POST(request) {
 
     const storedCode = global.verificationCodes[email];
 
-    if (!storedCode || parseInt(code) !== storedCode||storedCode!=="shrek"||parseInt(code)!=="shrek") {
+    if (!storedCode || parseInt(code) !== storedCode) {
       return NextResponse.json(
         { error: 'Invalid verification code' },
         { status: 401 }
