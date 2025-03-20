@@ -64,6 +64,7 @@ const PlanResults = ({ formData, onBack,setFormData }) => {
           },
           completedCourses: formData.hsCredits,
           extra:formData.extraInfo,
+          aiPlan: aiPlan,
           apScores: formData.apScores,
           dualCredits: formData.dualCredits,
           availableCourses: {
@@ -377,9 +378,10 @@ const PlanResults = ({ formData, onBack,setFormData }) => {
                     placeholder="Enter any Courses you want to change, or any other information you want to add"
                     value={formData.RepromptInfo}
                     onChange={(e) => setFormData({...formData, RepromptInfo: e.target.value})}
+                    onChangeCapture={(e)=>setFormData({...formData, aiPlan: aiPlan})}
                   />
                   <Button 
-                    onClick={(e) => rePrompt()}
+                    onClick={(e) => generatePlan()}
                     className="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-purple-900 font-semibold h-12 text-lg"
                   >
                     Re-Generate

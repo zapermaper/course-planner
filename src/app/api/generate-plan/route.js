@@ -9,12 +9,14 @@ export async function POST(request) {
   try {
     const body = await request.json();
     
-    const prompt = `As an expert high school academic advisor, create a detailed course plan based on the following student information:
+    const isReprompt = body.aiPlan !== null && body.aiPlan !== undefined;
+    
+    let prompt = `As an expert high school academic advisor, create a detailed course plan based on the following student information:
     
 Current Status:
 - Grade: ${body.studentInfo.currentGrade}
-- Target College: ${body.collegeInfo.collegeName}
-- Intended Major: ${body.collegeInfo.majorName}
+- Target College: ${body.collegeInfo?.collegeName || 'Not specified'}
+- Intended Major: ${body.collegeInfo?.majorName || 'Not specified'}
 - Course Load Preference: ${body.studentInfo.preferences.difficultyLevel}/10
 - Prioritize College Credits: ${body.studentInfo.preferences.collegePriority}
 - Allow Summer Courses: ${body.studentInfo.preferences.allowSummerCourses}
@@ -28,7 +30,21 @@ ${JSON.stringify(body.apScores, null, 2)}
 Dual Credits:
 ${JSON.stringify(body.dualCredits, null, 2)}
 extra comments by student for you to consider and apply:
-${JSON.stringify(body.extra, null, 2)}
+${JSON.stringify(body.extra, null, 2)}`;
+
+    if (isReprompt) {
+      prompt = `Use this as reference from the previous prompt and follow the reprompt:
+
+Previous AI Plan:
+${JSON.stringify(body.aiPlan, null, 2)}
+
+Reprompt Information:
+${body.repromptInfo || 'No specific reprompt information provided.'}
+
+${prompt}`;
+    }
+
+    prompt += `
 Please create a detailed semester-by-semester high school course plan following these STRICT requirements:
 
 CORE PRINCIPLES:
@@ -114,7 +130,8 @@ Format the response as a JSON object with the following structure:
 4. Follow the standard AP social studies sequence for advanced students
 5. Include computer science sequence when available
 6. Follow ALL prerequisites exactly as specified
-7. Prioritize accelerated math sequences for STEM majors` 
+7. Prioritize accelerated math sequences for STEM majors
+${isReprompt ? '8. Review the previous plan and make adjustments based on the reprompt information while maintaining continuity' : ''}` 
         },
         { 
           role: "user", 
@@ -132,7 +149,7 @@ Format the response as a JSON object with the following structure:
   } catch (error) {
     console.error('Error generating course plan:', error);
     return NextResponse.json(
-      { error: 'Failed to generate course plan' },
+      { error: 'Failed to generate course plan', details: error.message },
       { status: 500 }
     );
   }
