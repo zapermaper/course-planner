@@ -61,9 +61,9 @@ MATHEMATICS ACCELERATION RULES:
    - 12th: Choose from: Calculus 3, Linear Algebra, Discrete Math (all require Calc BC)
 2. If no Algebra 1:
    - 9th: Algebra 1
-   - 10th: Algebra 2
-   - 11th: Geometry 
-   - 12th: Pre-Calculus
+   - 10th: Advanced Geometry AND Advanced Algebra 2 (concurrent)
+   - 11th: Pre-Calculus
+   - 12th: AP Calculus BC
 
 
 SOCIAL STUDIES SEQUENCE (for difficulty 6+/10):
