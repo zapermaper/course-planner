@@ -115,7 +115,7 @@ const CoursePlanner = () => {
                 <TabsContent value="basic" className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-purple-900">Current Grade</label>
+                      <label className="text-sm font-medium text-purple-900">Incoming Grade</label>
                       <select 
                         className="w-full p-2 border border-purple-300 rounded"
                         value={formData.grade}
