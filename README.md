@@ -1,5 +1,5 @@
 
-Dedicated torwards jake and all his hammer monkeys
+Dedicated torwards jake
 ```bash
 #req
 npm install next    #local download
